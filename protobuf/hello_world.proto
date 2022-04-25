@@ -1,7 +1,8 @@
 //声明proto的版本 只有 proto3 才支持 gRPC
 syntax = "proto3";
 // 将编译后文件输出在 github.com/william-lbn/grpc-go/helloworld 目录
-option go_package = "github.com/william-lbn/grpc-go/helloworld";
+//option go_package = "github.com/william-lbn/grpc-go/helloworld";
+option go_package = "./";
 // 指定当前proto文件属于helloworld包
 package helloworld;
 
@@ -22,5 +23,5 @@ message HelloReply {
 }
 
 /*
-protoc --go_out=plugins=grpc:. *.proto
+protoc --go_out=plugins=grpc:. *.proto  --go_package="./"
 */
